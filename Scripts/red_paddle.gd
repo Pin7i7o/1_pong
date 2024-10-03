@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-enum OP_TYPE {
-	SELF,
-	AI,
-}
+#enum OP_TYPE {
+	#SELF,
+	#AI,
+#}
 
 var speed = 600
 var ball

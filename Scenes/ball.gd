@@ -16,4 +16,4 @@ func _physics_process(delta: float) -> void:
 		
 		var collider_name = collision.get_collider().name
 		
-		if collider_name == "blue_paddle" || collider_name == "red_paddle": speed+= 30
+		if collider_name == "blue_paddle" || collider_name == "red_paddle": speed+= 20

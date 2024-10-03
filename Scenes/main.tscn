@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdawy6u8tsetp"]
+[gd_scene load_steps=13 format=3 uid="uid://cdawy6u8tsetp"]
 
 [ext_resource type="Texture2D" uid="uid://f0uad7v835il" path="res://Assets/field.png" id="1_d4kst"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_x7ygu"]
 [ext_resource type="PackedScene" uid="uid://cc5cj1a3rj3d1" path="res://Scenes/blue_paddle.tscn" id="2_p5bsv"]
 [ext_resource type="Script" path="res://Scripts/blue_paddle.gd" id="3_6usj5"]
 [ext_resource type="PackedScene" uid="uid://r36rcri7046b" path="res://Scenes/red_paddle.tscn" id="3_kbcy0"]
@@ -15,7 +16,11 @@ size = Vector2(3, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ithlc"]
 size = Vector2(1242, 19)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr4k7"]
+size = Vector2(18, 683)
+
 [node name="main" type="Node2D"]
+script = ExtResource("1_x7ygu")
 
 [node name="field" type="Sprite2D" parent="."]
 scale = Vector2(1.25, 1.2)
@@ -33,7 +38,7 @@ scale = Vector2(6, 6)
 script = ExtResource("5_spej3")
 
 [node name="ball" parent="." instance=ExtResource("6_mvxe2")]
-position = Vector2(638, 354)
+position = Vector2(640, 360)
 scale = Vector2(2, 2)
 script = ExtResource("7_j65ea")
 
@@ -54,3 +59,18 @@ shape = SubResource("RectangleShape2D_ithlc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottom_bdry"]
 position = Vector2(640, 710)
 shape = SubResource("RectangleShape2D_ithlc")
+
+[node name="blue_goal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="blue_goal"]
+position = Vector2(9, 359.5)
+shape = SubResource("RectangleShape2D_sr4k7")
+
+[node name="red_goal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red_goal"]
+position = Vector2(1271, 359.5)
+shape = SubResource("RectangleShape2D_sr4k7")
+
+[connection signal="body_entered" from="blue_goal" to="." method="_on_blue_goal_body_entered"]
+[connection signal="body_entered" from="red_goal" to="." method="_on_red_goal_body_entered"]

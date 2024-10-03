@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdawy6u8tsetp"]
-
-[ext_resource type="Texture2D" uid="uid://f0uad7v835il" path="res://Assets/field.png" id="1_mdnf3"]
-
-[node name="MainGame" type="Node2D"]
-
-[node name="Field" type="Sprite2D" parent="."]
-texture = ExtResource("1_mdnf3")
-centered = false

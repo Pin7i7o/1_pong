@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdawy6u8tsetp"]
+
+[ext_resource type="Texture2D" uid="uid://f0uad7v835il" path="res://Assets/field.png" id="1_d4kst"]
+[ext_resource type="PackedScene" uid="uid://cc5cj1a3rj3d1" path="res://Scenes/blue_paddle.tscn" id="2_p5bsv"]
+[ext_resource type="Script" path="res://Scripts/blue_paddle.gd" id="3_6usj5"]
+[ext_resource type="PackedScene" uid="uid://r36rcri7046b" path="res://Scenes/red_paddle.tscn" id="3_kbcy0"]
+
+[node name="main" type="Node2D"]
+
+[node name="field" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 1.2)
+texture = ExtResource("1_d4kst")
+centered = false
+
+[node name="blue_paddle" parent="." instance=ExtResource("2_p5bsv")]
+position = Vector2(32, 352)
+scale = Vector2(6, 6)
+script = ExtResource("3_6usj5")
+
+[node name="red_paddle" parent="." instance=ExtResource("3_kbcy0")]
+position = Vector2(1248, 352)
+scale = Vector2(6, 6)

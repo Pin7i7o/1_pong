@@ -72,5 +72,33 @@ shape = SubResource("RectangleShape2D_sr4k7")
 position = Vector2(1271, 359.5)
 shape = SubResource("RectangleShape2D_sr4k7")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="blue_score" type="Label" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -200.0
+offset_right = -200.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.372549, 0.803922, 0.894118, 1)
+theme_override_font_sizes/font_size = 64
+text = "0 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="red_score" type="Label" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 200.0
+offset_right = 200.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.67451, 0.196078, 0.196078, 1)
+theme_override_font_sizes/font_size = 64
+text = "0 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="body_entered" from="blue_goal" to="." method="_on_blue_goal_body_entered"]
 [connection signal="body_entered" from="red_goal" to="." method="_on_red_goal_body_entered"]

@@ -11,4 +11,3 @@ func start():
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	if toggled_on: GlobalVars.gamemode = 1
 	else: GlobalVars.gamemode = 0
-	print(GlobalVars.gamemode)

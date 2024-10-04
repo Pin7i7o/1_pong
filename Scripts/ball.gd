@@ -11,9 +11,14 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(ball_velocity * speed * delta)
 	
+	
 	if collision:
 		ball_velocity = ball_velocity.bounce(collision.get_normal())
 		
 		var collider_name = collision.get_collider().name
 		
-		if collider_name == "blue_paddle" || collider_name == "red_paddle": speed+= 20
+		if collider_name == "blue_paddle" || collider_name == "red_paddle": 
+			speed+= 20
+			$paddle_collision_sfx.play()
+		else: $collision_sfx.play()
+		

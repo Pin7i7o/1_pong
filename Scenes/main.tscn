@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdawy6u8tsetp"]
+[gd_scene load_steps=14 format=3 uid="uid://cdawy6u8tsetp"]
 
 [ext_resource type="Texture2D" uid="uid://f0uad7v835il" path="res://Assets/field.png" id="1_d4kst"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_x7ygu"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cgt1j6awebvo0" path="res://Scenes/ball.tscn" id="6_mvxe2"]
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="7_j65ea"]
 [ext_resource type="Texture2D" uid="uid://cb6jr6dbkpo24" path="res://Assets/red_paddle.png" id="8_jgo82"]
+[ext_resource type="AudioStream" uid="uid://drew4vmk5lde" path="res://Assets/Sounds/goal.wav" id="11_wkaql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfhqr"]
 size = Vector2(3, 16)
@@ -99,6 +100,10 @@ theme_override_font_sizes/font_size = 64
 text = "0 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="goal_sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_wkaql")
+volume_db = 3.0
 
 [connection signal="body_entered" from="blue_goal" to="." method="_on_blue_goal_body_entered"]
 [connection signal="body_entered" from="red_goal" to="." method="_on_red_goal_body_entered"]

@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=3 uid="uid://fmhnkodx3y5p"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_8ap7d"]
+[ext_resource type="Texture2D" uid="uid://f0uad7v835il" path="res://Assets/field.png" id="2_mp06h"]
+[ext_resource type="FontFile" uid="uid://bsad1e3dblivx" path="res://Fonts/Silkscreen-Regular.ttf" id="3_mrns8"]
+[ext_resource type="Texture2D" uid="uid://cn66c46xneolu" path="res://Assets/ball.png" id="4_7vope"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eegyd"]
+texture = ExtResource("2_mp06h")
+modulate_color = Color(0.347817, 0.347817, 0.347817, 1)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8ap7d")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_eegyd")
+
+[node name="start_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -304.0
+offset_top = 16.0
+offset_right = 304.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.752941, 0, 1)
+theme_override_fonts/font = ExtResource("3_mrns8")
+theme_override_font_sizes/font_size = 64
+text = "Press Enter To Start"
+
+[node name="logo_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = -135.0
+offset_right = 164.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.929412, 0.109804, 0.137255, 1)
+theme_override_fonts/font = ExtResource("3_mrns8")
+theme_override_font_sizes/font_size = 102
+text = "P NG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -88.0
+offset_top = 115.0
+offset_right = -1.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.168627, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.168627, 0, 1)
+text = "VS AI"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -78.0
+offset_top = 269.0
+offset_right = -38.0
+offset_bottom = 309.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_7vope")
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]

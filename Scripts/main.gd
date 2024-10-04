@@ -14,3 +14,11 @@ func _on_blue_goal_body_entered(_body: Node2D) -> void:
 	$ball.speed = 400
 	red_score +=1
 	$CanvasLayer/red_score.text = str(red_score)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_action_pressed("quit"):
+			quit()
+			
+func quit():
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")

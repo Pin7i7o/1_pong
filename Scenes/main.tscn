@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://r36rcri7046b" path="res://Scenes/red_paddle.tscn" id="3_kbcy0"]
 [ext_resource type="Script" path="res://Scripts/red_paddle.gd" id="5_spej3"]
 [ext_resource type="PackedScene" uid="uid://cgt1j6awebvo0" path="res://Scenes/ball.tscn" id="6_mvxe2"]
-[ext_resource type="Script" path="res://Scenes/ball.gd" id="7_j65ea"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="7_j65ea"]
 [ext_resource type="Texture2D" uid="uid://cb6jr6dbkpo24" path="res://Assets/red_paddle.png" id="8_jgo82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfhqr"]
